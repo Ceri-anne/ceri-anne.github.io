@@ -9,6 +9,7 @@ tags:
   - "iphone-x"
 image: "/images/2017/11/iphone-x.jpg"
 ---
+![]({{page.image}})
 
 As I've had my iPhone X for 24 hours now, I thought I'd jot down a few of my thoughts and observations:
 

@@ -12,6 +12,7 @@ tags:
   - "map"
   - "swift"
 ---
+![]({{page.image}})
 
 In Swift we have **`map`**, **`flatMap`** and now **`compactMap`**. What do each of these functions do and how can we use them? Let's have a look at **`map`**...
 

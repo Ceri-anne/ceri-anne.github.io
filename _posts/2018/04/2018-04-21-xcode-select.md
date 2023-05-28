@@ -10,6 +10,8 @@ tags:
   - "xcode"
 image: /images/2018/04/mac-xcode.jpg
 ---
+![]({{page.image}})
+
 
 I've been learning some Server Side Swift with Vapor this week thanks to [Paul Hudson's awesome book](https://www.hackingwithswift.com/store/server-side-swift). Within about 10 minutes I learnt something which had nothing to do with Vapor, which is a good reminder that often it’s the extra bits and pieces you collect along the way that makes learning a new skill so beneficial.
 

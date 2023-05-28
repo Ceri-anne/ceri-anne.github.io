@@ -8,5 +8,6 @@ tags:
   - "women-in-tech"
 image: "/images/2017/10/note-pad.jpg"
 ---
+![]({{page.image}})
 
 This is my first attempt at blogging but I aim to add musings about software development, learning to code and being a woman in tech

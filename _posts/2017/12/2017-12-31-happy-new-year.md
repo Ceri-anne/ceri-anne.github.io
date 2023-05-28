@@ -4,8 +4,9 @@ title: "Happy New Year!"
 date: "2017-12-31"
 categories: 
   - "goals"
-image: /images/2017/12/happy-new-year.jpeg"
+image: /images/2017/12/happy-new-year.jpeg
 ---
+![]({{page.image}})
 
 As the New Year approaches, I thought it would be useful to reflect on what I have achieved over the last 12 months as well as what’s on my to-do list for the next 12!
 

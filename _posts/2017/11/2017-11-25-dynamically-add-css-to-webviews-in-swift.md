@@ -2,8 +2,9 @@
 layout: post
 title: "Dynamically adding css to WebViews in Swift"
 date: "2017-11-25"
-image: /images/2017/11/colouring-pencils.jpg"
+image: /images/2017/11/colouring-pencils.jpg
 ---
+![]({{page.image}})
 
 This week, I needed to figure out how to dynamically add css to a webView in iOS and it was much easier than I thought it would be.
 

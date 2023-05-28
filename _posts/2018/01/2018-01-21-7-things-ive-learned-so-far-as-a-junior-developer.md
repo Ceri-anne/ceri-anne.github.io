@@ -6,8 +6,9 @@ categories:
   - "general"
 tags: 
   - "software-developer"
-image: /images/2012/01/junior.jpg
+image: /images/2018/01/junior.jpg
 ---
+![]({{page.image}})
 
 It's been 2 years since I started to learn to code and just over a year since I became a developer, so it seems like a good time to reflect on what I've learned...
 
