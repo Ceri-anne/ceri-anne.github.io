@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>How to make a Command Line tool in Xcode | Ceri-anne</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="How to make a Command Line tool in Xcode" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="MacOS command line tools can be handy for automating tasks and they’re also a great way to have more fun with Swift, so here’s how to set one up:" />
+<meta property="og:description" content="MacOS command line tools can be handy for automating tasks and they’re also a great way to have more fun with Swift, so here’s how to set one up:" />
+<link rel="canonical" href="http://localhost:4000/development/macos/swift/xcode/2018/08/31/how-to-make-a-command-line-macos-tool-in-xcode.html" />
+<meta property="og:url" content="http://localhost:4000/development/macos/swift/xcode/2018/08/31/how-to-make-a-command-line-macos-tool-in-xcode.html" />
+<meta property="og:site_name" content="Ceri-anne" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-08-31T00:00:00+01:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="How to make a Command Line tool in Xcode" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2018-08-31T00:00:00+01:00","datePublished":"2018-08-31T00:00:00+01:00","description":"MacOS command line tools can be handy for automating tasks and they’re also a great way to have more fun with Swift, so here’s how to set one up:","headline":"How to make a Command Line tool in Xcode","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/development/macos/swift/xcode/2018/08/31/how-to-make-a-command-line-macos-tool-in-xcode.html"},"url":"http://localhost:4000/development/macos/swift/xcode/2018/08/31/how-to-make-a-command-line-macos-tool-in-xcode.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Ceri-anne" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Ceri-anne</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/courses-and-resources.html">Courses and Resources</a><a class="page-link" href="/talks.html">Talks/Interviews</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">How to make a Command Line tool in Xcode</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2018-08-31T00:00:00+01:00" itemprop="datePublished">Aug 31, 2018
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>MacOS command line tools can be handy for automating tasks and they’re also a great way to have more fun with Swift, so here’s how to set one up:</p>
+
+<p><strong>Creating the project</strong></p>
+
+<p>1. Create a new Xcode project, select MacOS and command line</p>
+
+<p><img src="/images/2018/08/command-line-tool.png" alt="" /></p>
+
+<p>2. Give your app a name, and make sure Swift is selected as the Language</p>
+
+<p><img src="/images/2018/08/create-project.png" alt="" /></p>
+
+<p>3. Click Next and choose where to save your project.</p>
+
+<p>You now have an Xcode command line project! The <code class="language-plaintext highlighter-rouge">main.swift</code> file is where Xcode will look to run your code, similar to the main function in Java or C# or the AppDelegate in iOS. There will be a <code class="language-plaintext highlighter-rouge">“Hello World”</code> print statement there already.</p>
+
+<p>Under Products there is an executable file called <code class="language-plaintext highlighter-rouge">CommandLineTool</code> which is red. This is the executable file created when we build the project. from the command line. It’s red because we haven’t built it yet</p>
+
+<p><img src="/images/2018/08/products.png" alt="" /></p>
+
+<p> </p>
+
+<p>4. Build and run the project. The CommandLineTool product will now change to black and the following output should display in the output window</p>
+
+<p><img src="/images/2018/08/build-and-run.png" alt="" /></p>
+
+<p><strong>Running from the Command Line</strong></p>
+
+<p>1. In File Inspector (⌥⌘1), check where the CommandLineTool Product is being saved. It will be a long location ending in</p>
+
+<p> <code class="language-plaintext highlighter-rouge">/Build/Products/Debug/CommandLineTool</code></p>
+
+<p>2. Navigate to this <code class="language-plaintext highlighter-rouge">Debug</code> folder and run theCommandLineTool by typing in <code class="language-plaintext highlighter-rouge">./CommandLineTool</code></p>
+
+<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span><span class="w"> </span>./CommandLineTool
+<span class="go">Hello, World!</span></code></pre></figure>
+
+<p>3. Try going into Xcode and changing the program slightly, for example:</p>
+
+<noscript><pre>400: Invalid request</pre></noscript>
+<script src="https://gist.github.com/45f77ae09dec199fb7dd52a98fb90a9e.js"> </script>
+
+<p>4. Build in Xcode (don’t miss this step out otherwise the executable won’t update). There’s no need to run in Xcode - just build ( ⌘ B ).</p>
+
+<p>5. Go back to terminal and re-run to see if it works:</p>
+
+<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span><span class="w"> </span>./CommandLineTool
+<span class="go">Hello, World! This is my command line tool</span></code></pre></figure>
+
+<p>This location isn’t very convenient to to run our tool from so we can move it to somewhere better.</p>
+
+<p>6. In either Finder or Terminal, navigate to the CommandLineTool folder and create a folder called bin. Your CommandLineTool folder should now look like this:</p>
+
+<p><img src="/images/2018/08/bin-folder.png" alt="" /></p>
+
+<p>7. In Xcode, go to the CommandLineTool target and Build Phase and add a new Run Script Phase</p>
+
+<p><img src="/images/2018/08/new-run-script-phase.png" alt="" /></p>
+
+<p>8. Add the following script <code class="language-plaintext highlighter-rouge">cp ${BUILT_PRODUCTS_DIR}/CommandLineTool ${PROJECT_DIR}/bin</code>`</p>
+
+<p><img src="/images/2018/08/run-script-code.png" alt="" /></p>
+
+<p>This will copy the executable when we build our project and paste it in our bin folder.</p>
+
+<p>9. Build the project and you should see the executable in your bin directory</p>
+
+<p><img src="/images/2018/08/executable-in-bin-directory.png" alt="" /></p>
+
+<p>10. Navigate to the project folder in terminal and you can run your CommandLineTool by typing in bin/CommandLineTool
+ </p>
+
+<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span><span class="w"> </span>bin/CommandLineTool
+<span class="go">Hello, World! This is my command line tool</span></code></pre></figure>
+
+<p><strong>Adding arguments</strong></p>
+
+<p><strong>Command Line</strong></p>
+
+<p>1. We can pass arguments in to our program when we run it from the command line. We just need to add a space and then the arguments. Let’s pass in a name:</p>
+
+<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span><span class="w"> </span>bin/CommandLineTool Ceri
+<span class="go">Hello, World! This is my command line tool</span></code></pre></figure>
+
+<p>We’re not doing anything with this argument so nothing different happens.</p>
+
+<p>2. Update <code class="language-plaintext highlighter-rouge">main.swift</code> to print out any arguments we pass in:</p>
+
+<noscript><pre>400: Invalid request</pre></noscript>
+<script src="https://gist.github.com/771bac64a2c7ab96179b6da6be783618.js"> </script>
+
+<p>3. Build and run from the command line, passing in arguments separated by spaces</p>
+
+<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span><span class="w"> </span>bin/CommandLineTool Hello 23
+<span class="go">\["bin/CommandLineTool", "Hello", "23"\]
+Hello, World! This is my command line tool</span></code></pre></figure>
+
+<p>Note that the first argument is the program name, and the arguments we passed in are 2nd and 3rd. Also, all arguments are strings.</p>
+
+<p>4. Amend the code to this:</p>
+
+<noscript><pre>400: Invalid request</pre></noscript>
+<script src="https://gist.github.com/4959356c5ac0c7c0a463b0de6fc3521c.js"> </script>
+
+<p>5. Run again and you’ll see each argument printed out</p>
+
+<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span><span class="w"> </span>bin/CommandLineTool Hello 23
+<span class="go">Hello
+23
+Hello, World! This is my command line tool</span></code></pre></figure>
+
+<p><strong>Xcode</strong></p>
+
+<p>1. To add an argument in Xcode, click on Edit Scheme</p>
+
+<p><img src="/images/2018/08/edit-scheme.png" alt="" /></p>
+
+<p>2. In Run/Arguments add an argument to <code class="language-plaintext highlighter-rouge">Arguments Passed On Launch</code> and click <code class="language-plaintext highlighter-rouge">Close</code></p>
+
+<p><img src="/images/2018/08/argument-passed-on-launch.png" alt="" /></p>
+
+<p>3. Now when you run the project in Xcode you’ll see the arguments printed out in the Output window</p>
+
+<p><img src="/images/2018/08/run-from-xcode.png" alt="" /></p>
+
+<p>And that’s it! Now you can develop as much Swift code as you like as normal. Just kick it all off in main.swift. Happy Swifting :)</p>
+
+<p>The code for this project is on Github: https://github.com/Ceri-anne/CommandLineTool</p>
+
+  </div><a class="u-url" href="/development/macos/swift/xcode/2018/08/31/how-to-make-a-command-line-macos-tool-in-xcode.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Ceri-anne</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Ceri-anne</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/ceri_anne"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">ceri_anne</span></a></li><li><a href="https://www.twitter.com/ceri_anne_dev"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">ceri_anne_dev</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>A blog about Swift, learning to code, and software development.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
