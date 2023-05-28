@@ -41,7 +41,7 @@ $ xcode-select -switch /Desktop/Xcode\\ 9.3.app/Contents/Developer/
 It's then really easy to just switch back to the main Xcode version when you need to:
 
 {% highlight console %}
-$ sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer/\
+$ sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer/
 {% endhighlight %}
 
 And now I can get on with learning more Vapor. I'm really enjoying it so far and am thinking of re-building this blog with it which should be fun!

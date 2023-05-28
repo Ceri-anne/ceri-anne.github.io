@@ -1,390 +1,395 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-05-28T19:28:29+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ceri-anne</title><subtitle>A blog about Swift, learning to code, and software development.</subtitle><entry><title type="html">How to make a Command Line tool in Xcode</title><link href="http://localhost:4000/development/macos/swift/xcode/2018/08/31/how-to-make-a-command-line-macos-tool-in-xcode.html" rel="alternate" type="text/html" title="How to make a Command Line tool in Xcode" /><published>2018-08-31T00:00:00+01:00</published><updated>2018-08-31T00:00:00+01:00</updated><id>http://localhost:4000/development/macos/swift/xcode/2018/08/31/how-to-make-a-command-line-macos-tool-in-xcode</id><content type="html" xml:base="http://localhost:4000/development/macos/swift/xcode/2018/08/31/how-to-make-a-command-line-macos-tool-in-xcode.html"><![CDATA[<p>MacOS command line tools can be handy for automating tasks and they’re also a great way to have more fun with Swift, so here’s how to set one up:</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-05-28T20:45:12+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ceri-anne</title><subtitle>A blog about Swift, learning to code, and software development.</subtitle><entry><title type="html">How to make a Command Line tool in Xcode</title><link href="http://localhost:4000/development/macos/swift/xcode/2018/08/31/how-to-make-a-command-line-macos-tool-in-xcode.html" rel="alternate" type="text/html" title="How to make a Command Line tool in Xcode" /><published>2018-08-31T00:00:00+01:00</published><updated>2018-08-31T00:00:00+01:00</updated><id>http://localhost:4000/development/macos/swift/xcode/2018/08/31/how-to-make-a-command-line-macos-tool-in-xcode</id><content type="html" xml:base="http://localhost:4000/development/macos/swift/xcode/2018/08/31/how-to-make-a-command-line-macos-tool-in-xcode.html">&lt;p&gt;MacOS command line tools can be handy for automating tasks and they’re also a great way to have more fun with Swift, so here’s how to set one up:&lt;/p&gt;
 
-<p><strong>Creating the project</strong></p>
+&lt;p&gt;&lt;strong&gt;Creating the project&lt;/strong&gt;&lt;/p&gt;
 
-<p>1. Create a new Xcode project, select MacOS and command line</p>
+&lt;p&gt;1. Create a new Xcode project, select MacOS and command line&lt;/p&gt;
 
-<p><img src="/images/2018/08/command-line-tool.png" alt="" /></p>
+&lt;p&gt;&lt;img src=&quot;/images/2018/08/command-line-tool.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-<p>2. Give your app a name, and make sure Swift is selected as the Language</p>
+&lt;p&gt;2. Give your app a name, and make sure Swift is selected as the Language&lt;/p&gt;
 
-<p><img src="/images/2018/08/create-project.png" alt="" /></p>
+&lt;p&gt;&lt;img src=&quot;/images/2018/08/create-project.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-<p>3. Click Next and choose where to save your project.</p>
+&lt;p&gt;3. Click Next and choose where to save your project.&lt;/p&gt;
 
-<p>You now have an Xcode command line project! The <code class="language-plaintext highlighter-rouge">main.swift</code> file is where Xcode will look to run your code, similar to the main function in Java or C# or the AppDelegate in iOS. There will be a <code class="language-plaintext highlighter-rouge">“Hello World”</code> print statement there already.</p>
+&lt;p&gt;You now have an Xcode command line project! The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main.swift&lt;/code&gt; file is where Xcode will look to run your code, similar to the main function in Java or C# or the AppDelegate in iOS. There will be a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;“Hello World”&lt;/code&gt; print statement there already.&lt;/p&gt;
 
-<p>Under Products there is an executable file called <code class="language-plaintext highlighter-rouge">CommandLineTool</code> which is red. This is the executable file created when we build the project. from the command line. It’s red because we haven’t built it yet</p>
+&lt;p&gt;Under Products there is an executable file called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CommandLineTool&lt;/code&gt; which is red. This is the executable file created when we build the project. from the command line. It’s red because we haven’t built it yet&lt;/p&gt;
 
-<p><img src="/images/2018/08/products.png" alt="" /></p>
+&lt;p&gt;&lt;img src=&quot;/images/2018/08/products.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-<p> </p>
+&lt;p&gt; &lt;/p&gt;
 
-<p>4. Build and run the project. The CommandLineTool product will now change to black and the following output should display in the output window</p>
+&lt;p&gt;4. Build and run the project. The CommandLineTool product will now change to black and the following output should display in the output window&lt;/p&gt;
 
-<p><img src="/images/2018/08/build-and-run.png" alt="" /></p>
+&lt;p&gt;&lt;img src=&quot;/images/2018/08/build-and-run.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-<p><strong>Running from the Command Line</strong></p>
+&lt;p&gt;&lt;strong&gt;Running from the Command Line&lt;/strong&gt;&lt;/p&gt;
 
-<p>1. In File Inspector (⌥⌘1), check where the CommandLineTool Product is being saved. It will be a long location ending in</p>
+&lt;p&gt;1. In File Inspector (⌥⌘1), check where the CommandLineTool Product is being saved. It will be a long location ending in&lt;/p&gt;
 
-<p> <code class="language-plaintext highlighter-rouge">/Build/Products/Debug/CommandLineTool</code></p>
+&lt;p&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/Build/Products/Debug/CommandLineTool&lt;/code&gt;&lt;/p&gt;
 
-<p>2. Navigate to this <code class="language-plaintext highlighter-rouge">Debug</code> folder and run theCommandLineTool by typing in <code class="language-plaintext highlighter-rouge">./CommandLineTool</code></p>
+&lt;p&gt;2. Navigate to this &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Debug&lt;/code&gt; folder and run theCommandLineTool by typing in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./CommandLineTool&lt;/code&gt;&lt;/p&gt;
 
-<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span><span class="w"> </span>./CommandLineTool
-<span class="go">Hello, World!</span></code></pre></figure>
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;./CommandLineTool
+&lt;span class=&quot;go&quot;&gt;Hello, World!&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-<p>3. Try going into Xcode and changing the program slightly, for example:</p>
+&lt;p&gt;3. Try going into Xcode and changing the program slightly, for example:&lt;/p&gt;
 
-<noscript><pre>400: Invalid request</pre></noscript>
-<script src="https://gist.github.com/45f77ae09dec199fb7dd52a98fb90a9e.js"> </script>
+&lt;script src=&quot;https://gist.github.com/45f77ae09dec199fb7dd52a98fb90a9e.js&quot;&gt; &lt;/script&gt;
 
-<p>4. Build in Xcode (don’t miss this step out otherwise the executable won’t update). There’s no need to run in Xcode - just build ( ⌘ B ).</p>
+&lt;p&gt;4. Build in Xcode (don’t miss this step out otherwise the executable won’t update). There’s no need to run in Xcode - just build ( ⌘ B ).&lt;/p&gt;
 
-<p>5. Go back to terminal and re-run to see if it works:</p>
+&lt;p&gt;5. Go back to terminal and re-run to see if it works:&lt;/p&gt;
 
-<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span><span class="w"> </span>./CommandLineTool
-<span class="go">Hello, World! This is my command line tool</span></code></pre></figure>
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;./CommandLineTool
+&lt;span class=&quot;go&quot;&gt;Hello, World! This is my command line tool&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-<p>This location isn’t very convenient to to run our tool from so we can move it to somewhere better.</p>
+&lt;p&gt;This location isn’t very convenient to to run our tool from so we can move it to somewhere better.&lt;/p&gt;
 
-<p>6. In either Finder or Terminal, navigate to the CommandLineTool folder and create a folder called bin. Your CommandLineTool folder should now look like this:</p>
+&lt;p&gt;6. In either Finder or Terminal, navigate to the CommandLineTool folder and create a folder called bin. Your CommandLineTool folder should now look like this:&lt;/p&gt;
 
-<p><img src="/images/2018/08/bin-folder.png" alt="" /></p>
+&lt;p&gt;&lt;img src=&quot;/images/2018/08/bin-folder.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-<p>7. In Xcode, go to the CommandLineTool target and Build Phase and add a new Run Script Phase</p>
+&lt;p&gt;7. In Xcode, go to the CommandLineTool target and Build Phase and add a new Run Script Phase&lt;/p&gt;
 
-<p><img src="/images/2018/08/new-run-script-phase.png" alt="" /></p>
+&lt;p&gt;&lt;img src=&quot;/images/2018/08/new-run-script-phase.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-<p>8. Add the following script <code class="language-plaintext highlighter-rouge">cp ${BUILT_PRODUCTS_DIR}/CommandLineTool ${PROJECT_DIR}/bin</code>`</p>
+&lt;p&gt;8. Add the following script &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cp ${BUILT_PRODUCTS_DIR}/CommandLineTool ${PROJECT_DIR}/bin&lt;/code&gt;`&lt;/p&gt;
 
-<p><img src="/images/2018/08/run-script-code.png" alt="" /></p>
+&lt;p&gt;&lt;img src=&quot;/images/2018/08/run-script-code.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-<p>This will copy the executable when we build our project and paste it in our bin folder.</p>
+&lt;p&gt;This will copy the executable when we build our project and paste it in our bin folder.&lt;/p&gt;
 
-<p>9. Build the project and you should see the executable in your bin directory</p>
+&lt;p&gt;9. Build the project and you should see the executable in your bin directory&lt;/p&gt;
 
-<p><img src="/images/2018/08/executable-in-bin-directory.png" alt="" /></p>
+&lt;p&gt;&lt;img src=&quot;/images/2018/08/executable-in-bin-directory.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-<p>10. Navigate to the project folder in terminal and you can run your CommandLineTool by typing in bin/CommandLineTool
- </p>
+&lt;p&gt;10. Navigate to the project folder in terminal and you can run your CommandLineTool by typing in bin/CommandLineTool
+ &lt;/p&gt;
 
-<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span><span class="w"> </span>bin/CommandLineTool
-<span class="go">Hello, World! This is my command line tool</span></code></pre></figure>
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;bin/CommandLineTool
+&lt;span class=&quot;go&quot;&gt;Hello, World! This is my command line tool&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-<p><strong>Adding arguments</strong></p>
+&lt;p&gt;&lt;strong&gt;Adding arguments&lt;/strong&gt;&lt;/p&gt;
 
-<p><strong>Command Line</strong></p>
+&lt;p&gt;&lt;strong&gt;Command Line&lt;/strong&gt;&lt;/p&gt;
 
-<p>1. We can pass arguments in to our program when we run it from the command line. We just need to add a space and then the arguments. Let’s pass in a name:</p>
+&lt;p&gt;1. We can pass arguments in to our program when we run it from the command line. We just need to add a space and then the arguments. Let’s pass in a name:&lt;/p&gt;
 
-<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span><span class="w"> </span>bin/CommandLineTool Ceri
-<span class="go">Hello, World! This is my command line tool</span></code></pre></figure>
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;bin/CommandLineTool Ceri
+&lt;span class=&quot;go&quot;&gt;Hello, World! This is my command line tool&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-<p>We’re not doing anything with this argument so nothing different happens.</p>
+&lt;p&gt;We’re not doing anything with this argument so nothing different happens.&lt;/p&gt;
 
-<p>2. Update <code class="language-plaintext highlighter-rouge">main.swift</code> to print out any arguments we pass in:</p>
+&lt;p&gt;2. Update &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main.swift&lt;/code&gt; to print out any arguments we pass in:&lt;/p&gt;
 
-<noscript><pre>400: Invalid request</pre></noscript>
-<script src="https://gist.github.com/771bac64a2c7ab96179b6da6be783618.js"> </script>
+&lt;script src=&quot;https://gist.github.com/771bac64a2c7ab96179b6da6be783618.js&quot;&gt; &lt;/script&gt;
 
-<p>3. Build and run from the command line, passing in arguments separated by spaces</p>
+&lt;p&gt;3. Build and run from the command line, passing in arguments separated by spaces&lt;/p&gt;
 
-<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span><span class="w"> </span>bin/CommandLineTool Hello 23
-<span class="go">\["bin/CommandLineTool", "Hello", "23"\]
-Hello, World! This is my command line tool</span></code></pre></figure>
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;bin/CommandLineTool Hello 23
+&lt;span class=&quot;go&quot;&gt;\[&quot;bin/CommandLineTool&quot;, &quot;Hello&quot;, &quot;23&quot;\]
+Hello, World! This is my command line tool&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-<p>Note that the first argument is the program name, and the arguments we passed in are 2nd and 3rd. Also, all arguments are strings.</p>
+&lt;p&gt;Note that the first argument is the program name, and the arguments we passed in are 2nd and 3rd. Also, all arguments are strings.&lt;/p&gt;
 
-<p>4. Amend the code to this:</p>
+&lt;p&gt;4. Amend the code to this:&lt;/p&gt;
 
-<noscript><pre>400: Invalid request</pre></noscript>
-<script src="https://gist.github.com/4959356c5ac0c7c0a463b0de6fc3521c.js"> </script>
+&lt;script src=&quot;https://gist.github.com/4959356c5ac0c7c0a463b0de6fc3521c.js&quot;&gt; &lt;/script&gt;
 
-<p>5. Run again and you’ll see each argument printed out</p>
+&lt;p&gt;5. Run again and you’ll see each argument printed out&lt;/p&gt;
 
-<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span><span class="w"> </span>bin/CommandLineTool Hello 23
-<span class="go">Hello
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;bin/CommandLineTool Hello 23
+&lt;span class=&quot;go&quot;&gt;Hello
 23
-Hello, World! This is my command line tool</span></code></pre></figure>
+Hello, World! This is my command line tool&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-<p><strong>Xcode</strong></p>
+&lt;p&gt;&lt;strong&gt;Xcode&lt;/strong&gt;&lt;/p&gt;
 
-<p>1. To add an argument in Xcode, click on Edit Scheme</p>
+&lt;p&gt;1. To add an argument in Xcode, click on Edit Scheme&lt;/p&gt;
 
-<p><img src="/images/2018/08/edit-scheme.png" alt="" /></p>
+&lt;p&gt;&lt;img src=&quot;/images/2018/08/edit-scheme.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-<p>2. In Run/Arguments add an argument to <code class="language-plaintext highlighter-rouge">Arguments Passed On Launch</code> and click <code class="language-plaintext highlighter-rouge">Close</code></p>
+&lt;p&gt;2. In Run/Arguments add an argument to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Arguments Passed On Launch&lt;/code&gt; and click &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Close&lt;/code&gt;&lt;/p&gt;
 
-<p><img src="/images/2018/08/argument-passed-on-launch.png" alt="" /></p>
+&lt;p&gt;&lt;img src=&quot;/images/2018/08/argument-passed-on-launch.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-<p>3. Now when you run the project in Xcode you’ll see the arguments printed out in the Output window</p>
+&lt;p&gt;3. Now when you run the project in Xcode you’ll see the arguments printed out in the Output window&lt;/p&gt;
 
-<p><img src="/images/2018/08/run-from-xcode.png" alt="" /></p>
+&lt;p&gt;&lt;img src=&quot;/images/2018/08/run-from-xcode.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-<p>And that’s it! Now you can develop as much Swift code as you like as normal. Just kick it all off in main.swift. Happy Swifting :)</p>
+&lt;p&gt;And that’s it! Now you can develop as much Swift code as you like as normal. Just kick it all off in main.swift. Happy Swifting :)&lt;/p&gt;
 
-<p>The code for this project is on Github: https://github.com/Ceri-anne/CommandLineTool</p>]]></content><author><name></name></author><category term="development" /><category term="macos" /><category term="swift" /><category term="xcode" /><summary type="html"><![CDATA[MacOS command line tools can be handy for automating tasks and they’re also a great way to have more fun with Swift, so here’s how to set one up:]]></summary></entry><entry><title type="html">Working with a forked git repo</title><link href="http://localhost:4000/development/git/2018/08/29/working-with-a-forked-git-repo.html" rel="alternate" type="text/html" title="Working with a forked git repo" /><published>2018-08-29T00:00:00+01:00</published><updated>2018-08-29T00:00:00+01:00</updated><id>http://localhost:4000/development/git/2018/08/29/working-with-a-forked-git-repo</id><content type="html" xml:base="http://localhost:4000/development/git/2018/08/29/working-with-a-forked-git-repo.html"><![CDATA[<p>Found a cool project on Github you would like to contribute to? Here’s how to fork the repo, keep it up to date and make a pull request.</p>
+&lt;p&gt;The code for this project is on Github: https://github.com/Ceri-anne/CommandLineTool&lt;/p&gt;</content><author><name></name></author><category term="development" /><category term="macos" /><category term="swift" /><category term="xcode" /><summary type="html">MacOS command line tools can be handy for automating tasks and they’re also a great way to have more fun with Swift, so here’s how to set one up:</summary></entry><entry><title type="html">Working with a forked git repo</title><link href="http://localhost:4000/development/git/2018/08/29/working-with-a-forked-git-repo.html" rel="alternate" type="text/html" title="Working with a forked git repo" /><published>2018-08-29T00:00:00+01:00</published><updated>2018-08-29T00:00:00+01:00</updated><id>http://localhost:4000/development/git/2018/08/29/working-with-a-forked-git-repo</id><content type="html" xml:base="http://localhost:4000/development/git/2018/08/29/working-with-a-forked-git-repo.html">&lt;p&gt;Found a cool project on Github you would like to contribute to? Here’s how to fork the repo, keep it up to date and make a pull request.&lt;/p&gt;
 
-<p><strong>FORK THE REPO</strong></p>
+&lt;p&gt;&lt;strong&gt;FORK THE REPO&lt;/strong&gt;&lt;/p&gt;
 
-<p>Click ‘Fork’ in the original repo<img src="images/2018/08/github-fork.png" alt="" /></p>
+&lt;p&gt;Click ‘Fork’ in the original repo&lt;img src=&quot;images/2018/08/github-fork.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-<p>This will create a forked version in your own Github account so you have your own copy of the repo.</p>
+&lt;p&gt;This will create a forked version in your own Github account so you have your own copy of the repo.&lt;/p&gt;
 
-<p><strong>CLONE THE FORKED REPO</strong></p>
+&lt;p&gt;&lt;strong&gt;CLONE THE FORKED REPO&lt;/strong&gt;&lt;/p&gt;
 
-<p>1. In your forked repo, click the <code class="language-plaintext highlighter-rouge">Clone or download</code> button</p>
+&lt;p&gt;1. In your forked repo, click the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Clone or download&lt;/code&gt; button&lt;/p&gt;
 
-<p><img src="/images/2018/08/clone-or-download.png" alt="" /></p>
+&lt;p&gt;&lt;img src=&quot;/images/2018/08/clone-or-download.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-<p>2. Copy the git address</p>
+&lt;p&gt;2. Copy the git address&lt;/p&gt;
 
-<p>3. In terminal, navigate to a folder you want to save the repo then enter <code class="language-plaintext highlighter-rouge">git clone</code> followed by the copied git address and hit enter</p>
+&lt;p&gt;3. In terminal, navigate to a folder you want to save the repo then enter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git clone&lt;/code&gt; followed by the copied git address and hit enter&lt;/p&gt;
 
-<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span><span class="w"> </span>git clone &lt;your-repo-address&gt;</code></pre></figure>
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;git clone &amp;lt;your-repo-address&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-<p>You now have a local version of your forked repo.</p>
+&lt;p&gt;You now have a local version of your forked repo.&lt;/p&gt;
 
-<p><strong>KEEP YOUR FORK UP TO DATE</strong></p>
+&lt;p&gt;&lt;strong&gt;KEEP YOUR FORK UP TO DATE&lt;/strong&gt;&lt;/p&gt;
 
-<p>You can work on your forked version of the project completely separately from the original, but if you want to keep your version up to date then you need to link yours to the original by adding it as an `upstream`.</p>
+&lt;p&gt;You can work on your forked version of the project completely separately from the original, but if you want to keep your version up to date then you need to link yours to the original by adding it as an `upstream`.&lt;/p&gt;
 
-<p><strong>Set up (only need to do once):</strong></p>
+&lt;p&gt;&lt;strong&gt;Set up (only need to do once):&lt;/strong&gt;&lt;/p&gt;
 
-<p>1. In the original repo, click on <code class="language-plaintext highlighter-rouge">Clone or download</code> and copy the original repo address</p>
+&lt;p&gt;1. In the original repo, click on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Clone or download&lt;/code&gt; and copy the original repo address&lt;/p&gt;
 
-<p>2. In terminal, <code class="language-plaintext highlighter-rouge">cd</code> into your project folder</p>
+&lt;p&gt;2. In terminal, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd&lt;/code&gt; into your project folder&lt;/p&gt;
 
-<p>3. Type `git remote add upstream`, paste in the original repo address and hit Enter</p>
+&lt;p&gt;3. Type `git remote add upstream`, paste in the original repo address and hit Enter&lt;/p&gt;
 
-<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span><span class="w"> </span>git remote add upstream &lt;original-repo-address&gt;</code></pre></figure>
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;git remote add upstream &amp;lt;original-repo-address&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-<p><strong>Update:</strong></p>
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt;&lt;/p&gt;
 
-<p>1. To update the upstream branches:</p>
+&lt;p&gt;1. To update the upstream branches:&lt;/p&gt;
 
-<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span><span class="w"> </span>git fetch upstream</code></pre></figure>
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;git fetch upstream&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-<p>This fetches all the changes made in the original repo.</p>
+&lt;p&gt;This fetches all the changes made in the original repo.&lt;/p&gt;
 
-<p>2. Update your local master:</p>
+&lt;p&gt;2. Update your local master:&lt;/p&gt;
 
-<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span><span class="w"> </span>git pull upstream master</code></pre></figure>
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;git pull upstream master&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-<p>This pulls the upstream changes into your local master branch.</p>
+&lt;p&gt;This pulls the upstream changes into your local master branch.&lt;/p&gt;
 
-<p>3. Then git push to your remote repo</p>
+&lt;p&gt;3. Then git push to your remote repo&lt;/p&gt;
 
-<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span><span class="w"> </span>git push</code></pre></figure>
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;git push&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-<p>This updates your forked remote repo with the changes.</p>
+&lt;p&gt;This updates your forked remote repo with the changes.&lt;/p&gt;
 
-<p><strong>SUBMIT A PULL REQUEST</strong></p>
+&lt;p&gt;&lt;strong&gt;SUBMIT A PULL REQUEST&lt;/strong&gt;&lt;/p&gt;
 
-<p>Once you have made changes to your fork, you can request for those changes to be merged into the original project.</p>
+&lt;p&gt;Once you have made changes to your fork, you can request for those changes to be merged into the original project.&lt;/p&gt;
 
-<p>1. Click on <code class="language-plaintext highlighter-rouge">New pull request</code></p>
+&lt;p&gt;1. Click on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;New pull request&lt;/code&gt;&lt;/p&gt;
 
-<p><img src="/images/2018/08/new-pull-request.png" alt="" /></p>
+&lt;p&gt;&lt;img src=&quot;/images/2018/08/new-pull-request.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-<p>2. On the compare changes page, check the base fork is the original repo and the head fork is your repo with the correct branch selected</p>
+&lt;p&gt;2. On the compare changes page, check the base fork is the original repo and the head fork is your repo with the correct branch selected&lt;/p&gt;
 
-<p>3. Add a title and description</p>
+&lt;p&gt;3. Add a title and description&lt;/p&gt;
 
-<p>4. <code class="language-plaintext highlighter-rouge">Allow edits from maintainers</code> will be checked. If you’re not happy with this then de-select</p>
+&lt;p&gt;4. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Allow edits from maintainers&lt;/code&gt; will be checked. If you’re not happy with this then de-select&lt;/p&gt;
 
-<p>5. Click <code class="language-plaintext highlighter-rouge">Create pull request</code></p>
+&lt;p&gt;5. Click &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Create pull request&lt;/code&gt;&lt;/p&gt;
 
-<p>Then it’s up to the maintainers of the original repo to ask questions, request changes or merge it in! 🤞🏼</p>]]></content><author><name></name></author><category term="development" /><category term="git" /><summary type="html"><![CDATA[Found a cool project on Github you would like to contribute to? Here’s how to fork the repo, keep it up to date and make a pull request.]]></summary></entry><entry><title type="html">Understanding Map functions in Swift</title><link href="http://localhost:4000/development/swift/2018/05/08/understanding-map-functions-in-swift.html" rel="alternate" type="text/html" title="Understanding Map functions in Swift" /><published>2018-05-08T00:00:00+01:00</published><updated>2018-05-08T00:00:00+01:00</updated><id>http://localhost:4000/development/swift/2018/05/08/understanding-map-functions-in-swift</id><content type="html" xml:base="http://localhost:4000/development/swift/2018/05/08/understanding-map-functions-in-swift.html"><![CDATA[<p>In Swift we have <strong><code class="language-plaintext highlighter-rouge">map</code></strong>, <strong><code class="language-plaintext highlighter-rouge">flatMap</code></strong> and now <strong><code class="language-plaintext highlighter-rouge">compactMap</code></strong>. What do each of these functions do and how can we use them? Let’s have a look at <strong><code class="language-plaintext highlighter-rouge">map</code></strong>…</p>
+&lt;p&gt;Then it’s up to the maintainers of the original repo to ask questions, request changes or merge it in! 🤞🏼&lt;/p&gt;</content><author><name></name></author><category term="development" /><category term="git" /><summary type="html">Found a cool project on Github you would like to contribute to? Here’s how to fork the repo, keep it up to date and make a pull request.</summary></entry><entry><title type="html">Understanding Map functions in Swift</title><link href="http://localhost:4000/development/swift/2018/05/08/understanding-map-functions-in-swift.html" rel="alternate" type="text/html" title="Understanding Map functions in Swift" /><published>2018-05-08T00:00:00+01:00</published><updated>2018-05-08T00:00:00+01:00</updated><id>http://localhost:4000/development/swift/2018/05/08/understanding-map-functions-in-swift</id><content type="html" xml:base="http://localhost:4000/development/swift/2018/05/08/understanding-map-functions-in-swift.html">&lt;p&gt;&lt;img src=&quot;/images/2018/05/map.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-<h2 id="part-1-map">Part 1:  Map</h2>
+&lt;p&gt;In Swift we have &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;map&lt;/code&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;flatMap&lt;/code&gt;&lt;/strong&gt; and now &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;compactMap&lt;/code&gt;&lt;/strong&gt;. What do each of these functions do and how can we use them? Let’s have a look at &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;map&lt;/code&gt;&lt;/strong&gt;…&lt;/p&gt;
 
-<p>The <strong><code class="language-plaintext highlighter-rouge">map</code></strong> function takes a collection (often an array) and a function, and returns an array of items from the collection with the function applied to each item:</p>
+&lt;h2 id=&quot;part-1-map&quot;&gt;Part 1:  Map&lt;/h2&gt;
 
-<p><img src="/images/2018/05/map-diagram.png" alt="" /></p>
+&lt;p&gt;The &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;map&lt;/code&gt;&lt;/strong&gt; function takes a collection (often an array) and a function, and returns an array of items from the collection with the function applied to each item:&lt;/p&gt;
 
-<p>So for example, we could take an array of integers and a function which multiplies integers by 2:</p>
+&lt;p&gt;&lt;img src=&quot;/images/2018/05/map-diagram.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-<noscript><pre>400: Invalid request</pre></noscript>
-<script src="https://gist.github.com/d6f72acf1865120c19edd73e638a35c3.js"> </script>
+&lt;p&gt;So for example, we could take an array of integers and a function which multiplies integers by 2:&lt;/p&gt;
 
-<p>Or given a list of names, we could capitalise them all:</p>
+&lt;script src=&quot;https://gist.github.com/d6f72acf1865120c19edd73e638a35c3.js&quot;&gt; &lt;/script&gt;
 
-<noscript><pre>400: Invalid request</pre></noscript>
-<script src="https://gist.github.com/12ce73048961749a7e698d53d34e85fe.js"> </script>
+&lt;p&gt;Or given a list of names, we could capitalise them all:&lt;/p&gt;
 
-<p>[NB: If the curly brackets or $0 notation are not familiar then it’s worth reading up on <a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Closures.html">closures</a> before continuing]</p>
+&lt;script src=&quot;https://gist.github.com/12ce73048961749a7e698d53d34e85fe.js&quot;&gt; &lt;/script&gt;
 
-<p>The same result can be achieved by looping through each element in the array as follows:</p>
+&lt;p&gt;[NB: If the curly brackets or $0 notation are not familiar then it’s worth reading up on &lt;a href=&quot;https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Closures.html&quot;&gt;closures&lt;/a&gt; before continuing]&lt;/p&gt;
 
-<noscript><pre>400: Invalid request</pre></noscript>
-<script src="https://gist.github.com/2ef6b1bb3f6e3da5cbb8b0c14aa8b0ab.js"> </script>
+&lt;p&gt;The same result can be achieved by looping through each element in the array as follows:&lt;/p&gt;
 
-<p>So why use the map function?</p>
+&lt;script src=&quot;https://gist.github.com/2ef6b1bb3f6e3da5cbb8b0c14aa8b0ab.js&quot;&gt; &lt;/script&gt;
 
-<ul>
-  <li><strong><code class="language-plaintext highlighter-rouge">map</code></strong> is <strong>declarative</strong>. We are <strong>declaring</strong> what we want the code to do, rather than <strong>how</strong> we want it to do it <strong>(imperative)</strong>. The code is therefore declaring our intent, so should be clearer and easier to understand.</li>
-  <li>With <strong><code class="language-plaintext highlighter-rouge">map</code></strong> we could declare the resulting array with<strong><code class="language-plaintext highlighter-rouge">let</code></strong> whereas with a loop we need to use <strong><code class="language-plaintext highlighter-rouge">var</code>.</strong>  If we don’t want this array to change after we’ve made it then this is safer code.</li>
-</ul>
+&lt;p&gt;So why use the map function?&lt;/p&gt;
 
-<p><strong>Next up <code class="language-plaintext highlighter-rouge">flatMap</code>… coming soon!</strong></p>]]></content><author><name></name></author><category term="development" /><category term="swift" /><category term="functional" /><category term="ios" /><category term="map" /><category term="swift" /><summary type="html"><![CDATA[In Swift we have map, flatMap and now compactMap. What do each of these functions do and how can we use them? Let’s have a look at map…]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/2018/05/map.jpg" /><media:content medium="image" url="http://localhost:4000/images/2018/05/map.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Xcode-select</title><link href="http://localhost:4000/xcode/2018/04/21/xcode-select.html" rel="alternate" type="text/html" title="Xcode-select" /><published>2018-04-21T00:00:00+01:00</published><updated>2018-04-21T00:00:00+01:00</updated><id>http://localhost:4000/xcode/2018/04/21/xcode-select</id><content type="html" xml:base="http://localhost:4000/xcode/2018/04/21/xcode-select.html"><![CDATA[<p>I’ve been learning some Server Side Swift with Vapor this week thanks to <a href="https://www.hackingwithswift.com/store/server-side-swift">Paul Hudson’s awesome book</a>. Within about 10 minutes I learnt something which had nothing to do with Vapor, which is a good reminder that often it’s the extra bits and pieces you collect along the way that makes learning a new skill so beneficial.</p>
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;map&lt;/code&gt;&lt;/strong&gt; is &lt;strong&gt;declarative&lt;/strong&gt;. We are &lt;strong&gt;declaring&lt;/strong&gt; what we want the code to do, rather than &lt;strong&gt;how&lt;/strong&gt; we want it to do it &lt;strong&gt;(imperative)&lt;/strong&gt;. The code is therefore declaring our intent, so should be clearer and easier to understand.&lt;/li&gt;
+  &lt;li&gt;With &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;map&lt;/code&gt;&lt;/strong&gt; we could declare the resulting array with&lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;let&lt;/code&gt;&lt;/strong&gt; whereas with a loop we need to use &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var&lt;/code&gt;.&lt;/strong&gt;  If we don’t want this array to change after we’ve made it then this is safer code.&lt;/li&gt;
+&lt;/ul&gt;
 
-<p>As soon as I started I got a load of build errors like this one when running <strong>xcode build</strong> from terminal.</p>
+&lt;p&gt;&lt;strong&gt;Next up &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;flatMap&lt;/code&gt;… coming soon!&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="development" /><category term="swift" /><category term="functional" /><category term="ios" /><category term="map" /><category term="swift" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/2018/05/map.jpg" /><media:content medium="image" url="http://localhost:4000/images/2018/05/map.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Xcode-select</title><link href="http://localhost:4000/xcode/2018/04/21/xcode-select.html" rel="alternate" type="text/html" title="Xcode-select" /><published>2018-04-21T00:00:00+01:00</published><updated>2018-04-21T00:00:00+01:00</updated><id>http://localhost:4000/xcode/2018/04/21/xcode-select</id><content type="html" xml:base="http://localhost:4000/xcode/2018/04/21/xcode-select.html">&lt;p&gt;&lt;img src=&quot;/images/2018/04/mac-xcode.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-<p>This is because Vapor 3.0 requires Swift 4.1 but I am currently using Xcode 9.1 (Swift version 4.0). I have a few different Xcode versions installed as always (the current App Store version and the latest Beta at least) and when I was running <strong>xcode build</strong>, the current App Store version was the one being used.</p>
+&lt;p&gt;I’ve been learning some Server Side Swift with Vapor this week thanks to &lt;a href=&quot;https://www.hackingwithswift.com/store/server-side-swift&quot;&gt;Paul Hudson’s awesome book&lt;/a&gt;. Within about 10 minutes I learnt something which had nothing to do with Vapor, which is a good reminder that often it’s the extra bits and pieces you collect along the way that makes learning a new skill so beneficial.&lt;/p&gt;
 
-<p>That’s where <strong>xcode-select</strong> comes in because it enables you to switch versions. Pretty handy!</p>
+&lt;p&gt;As soon as I started I got a load of build errors like this one when running &lt;strong&gt;xcode build&lt;/strong&gt; from terminal.&lt;/p&gt;
 
-<p>To install it you run xcode-select –install, then -print-path shows the current Xcode version being used, and -switch enables you to switch to a different version</p>
+&lt;p&gt;This is because Vapor 3.0 requires Swift 4.1 but I am currently using Xcode 9.1 (Swift version 4.0). I have a few different Xcode versions installed as always (the current App Store version and the latest Beta at least) and when I was running &lt;strong&gt;xcode build&lt;/strong&gt;, the current App Store version was the one being used.&lt;/p&gt;
 
-<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span><span class="w"> </span>xcode-select <span class="nt">--install</span></code></pre></figure>
+&lt;p&gt;That’s where &lt;strong&gt;xcode-select&lt;/strong&gt; comes in because it enables you to switch versions. Pretty handy!&lt;/p&gt;
 
-<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span><span class="w"> </span>xcode-select <span class="nt">-print-path</span>
-<span class="go">/Applications/Xcode.app/Contents/Developer</span></code></pre></figure>
+&lt;p&gt;To install it you run xcode-select –install, then -print-path shows the current Xcode version being used, and -switch enables you to switch to a different version&lt;/p&gt;
 
-<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span><span class="w"> </span>xcode-select <span class="nt">-switch</span> /Desktop/Xcode<span class="se">\\</span> 9.3.app/Contents/Developer/</code></pre></figure>
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;xcode-select &lt;span class=&quot;nt&quot;&gt;--install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-<p>(You may need to use <strong>sudo</strong> for some of these commands)</p>
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;xcode-select &lt;span class=&quot;nt&quot;&gt;-print-path&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;/Applications/Xcode.app/Contents/Developer&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-<p>It’s then really easy to just switch back to the main Xcode version when you need to:</p>
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;xcode-select &lt;span class=&quot;nt&quot;&gt;-switch&lt;/span&gt; /Desktop/Xcode&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt; 9.3.app/Contents/Developer/&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span><span class="w"> </span><span class="nb">sudo </span>xcode-select <span class="nt">-switch</span> /Applications/Xcode.app/Contents/Developer/<span class="se">\</span></code></pre></figure>
+&lt;p&gt;(You may need to use &lt;strong&gt;sudo&lt;/strong&gt; for some of these commands)&lt;/p&gt;
 
-<p>And now I can get on with learning more Vapor. I’m really enjoying it so far and am thinking of re-building this blog with it which should be fun!</p>]]></content><author><name></name></author><category term="xcode" /><category term="ios" /><category term="swift" /><category term="xcode" /><summary type="html"><![CDATA[I’ve been learning some Server Side Swift with Vapor this week thanks to Paul Hudson’s awesome book. Within about 10 minutes I learnt something which had nothing to do with Vapor, which is a good reminder that often it’s the extra bits and pieces you collect along the way that makes learning a new skill so beneficial.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/2018/04/mac-xcode.jpg" /><media:content medium="image" url="http://localhost:4000/images/2018/04/mac-xcode.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">7 things I’ve learned so far as a junior developer</title><link href="http://localhost:4000/general/2018/01/21/7-things-ive-learned-so-far-as-a-junior-developer.html" rel="alternate" type="text/html" title="7 things I’ve learned so far as a junior developer" /><published>2018-01-21T00:00:00+00:00</published><updated>2018-01-21T00:00:00+00:00</updated><id>http://localhost:4000/general/2018/01/21/7-things-ive-learned-so-far-as-a-junior-developer</id><content type="html" xml:base="http://localhost:4000/general/2018/01/21/7-things-ive-learned-so-far-as-a-junior-developer.html"><![CDATA[<p>It’s been 2 years since I started to learn to code and just over a year since I became a developer, so it seems like a good time to reflect on what I’ve learned…</p>
+&lt;p&gt;It’s then really easy to just switch back to the main Xcode version when you need to:&lt;/p&gt;
 
-<p><strong>1. You don’t need to know everything</strong></p>
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;xcode-select &lt;span class=&quot;nt&quot;&gt;-switch&lt;/span&gt; /Applications/Xcode.app/Contents/Developer/&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-<p>When I was first learning to code I felt like <em>real</em> developers knew everything and I knew nothing. But it’s just not true. There are always new concepts, languages, frameworks, technology and terminology. It’s good to keep up to date and be aware of new things but you can’t know everything.</p>
+&lt;p&gt;And now I can get on with learning more Vapor. I’m really enjoying it so far and am thinking of re-building this blog with it which should be fun!&lt;/p&gt;</content><author><name></name></author><category term="xcode" /><category term="ios" /><category term="swift" /><category term="xcode" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/2018/04/mac-xcode.jpg" /><media:content medium="image" url="http://localhost:4000/images/2018/04/mac-xcode.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">7 things I’ve learned so far as a junior developer</title><link href="http://localhost:4000/general/2018/01/21/7-things-ive-learned-so-far-as-a-junior-developer.html" rel="alternate" type="text/html" title="7 things I’ve learned so far as a junior developer" /><published>2018-01-21T00:00:00+00:00</published><updated>2018-01-21T00:00:00+00:00</updated><id>http://localhost:4000/general/2018/01/21/7-things-ive-learned-so-far-as-a-junior-developer</id><content type="html" xml:base="http://localhost:4000/general/2018/01/21/7-things-ive-learned-so-far-as-a-junior-developer.html">&lt;p&gt;&lt;img src=&quot;/images/2018/01/junior.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-<p>I still feel like a kid in a sweet shop as there are so many exciting things I want to learn about but I am trying to focus a bit more. I’m going to try an 80/20 approach. 80% of my learning time on topics that deepen my knowledge and understanding (e.g. Advanced Swift, Design Patterns, Functional Programming, Objective C) and 20% on new shiny things that tempt me (e.g. Arduino, Python, Alexa skills) I’m also trying to keep an active list of topics I’m interested in so I can explore them later rather than distracting me too much in the moment.</p>
+&lt;p&gt;It’s been 2 years since I started to learn to code and just over a year since I became a developer, so it seems like a good time to reflect on what I’ve learned…&lt;/p&gt;
 
-<p><strong>2. Software development is much more than coding</strong></p>
+&lt;p&gt;&lt;strong&gt;1. You don’t need to know everything&lt;/strong&gt;&lt;/p&gt;
 
-<p>Learning to code is obviously a massive part of becoming a software developer but it’s not the only skill you need. I spend much less time sat at a laptop on my own writing code than I thought I would. I spend quite a lot of time with other developers either pair programming or discussing an approach before starting some work. I also use skills such as using Git, Terminal, Postman, Charles, automated and manual testing, CI and much more.</p>
+&lt;p&gt;When I was first learning to code I felt like &lt;em&gt;real&lt;/em&gt; developers knew everything and I knew nothing. But it’s just not true. There are always new concepts, languages, frameworks, technology and terminology. It’s good to keep up to date and be aware of new things but you can’t know everything.&lt;/p&gt;
 
-<p>Communication skills, collaboration and teamwork are also really important as a developer in an agile team.</p>
+&lt;p&gt;I still feel like a kid in a sweet shop as there are so many exciting things I want to learn about but I am trying to focus a bit more. I’m going to try an 80/20 approach. 80% of my learning time on topics that deepen my knowledge and understanding (e.g. Advanced Swift, Design Patterns, Functional Programming, Objective C) and 20% on new shiny things that tempt me (e.g. Arduino, Python, Alexa skills) I’m also trying to keep an active list of topics I’m interested in so I can explore them later rather than distracting me too much in the moment.&lt;/p&gt;
 
-<p><strong>3. Practice makes permanent</strong></p>
+&lt;p&gt;&lt;strong&gt;2. Software development is much more than coding&lt;/strong&gt;&lt;/p&gt;
 
-<p>No matter how much you think you understand something, the only way you know for sure is by putting it in practice. This doesn’t mean that every time you learn something new, you have to build a fully functioning web app or an app that’s ready to submit to the App Store though. Once I realized that I could practice specific skills by building prototypes or by practicing in a small app then my learning became more focused.</p>
+&lt;p&gt;Learning to code is obviously a massive part of becoming a software developer but it’s not the only skill you need. I spend much less time sat at a laptop on my own writing code than I thought I would. I spend quite a lot of time with other developers either pair programming or discussing an approach before starting some work. I also use skills such as using Git, Terminal, Postman, Charles, automated and manual testing, CI and much more.&lt;/p&gt;
 
-<p><strong>4. Imposter Syndrome is normal</strong></p>
+&lt;p&gt;Communication skills, collaboration and teamwork are also really important as a developer in an agile team.&lt;/p&gt;
 
-<p>As someone who doesn’t have a computer science degree, and also a career changer I am prone to Imposter Syndrome. The problem is that it makes me retreat and blame myself for not being able to understand something. That’s not very productive!</p>
+&lt;p&gt;&lt;strong&gt;3. Practice makes permanent&lt;/strong&gt;&lt;/p&gt;
 
-<p>I am trying to fill in gaps in my computer science knowledge by reading <a href="https://bigmachine.io/products/the-imposters-handbook">The Imposter’s Handbook</a> and ensuring I always ask questions no matter how stupid they seem! Also, building a supportive network to discuss it with helps. I’ve realised that loads of other developers feel the same, no matter what their background or journey into tech.</p>
+&lt;p&gt;No matter how much you think you understand something, the only way you know for sure is by putting it in practice. This doesn’t mean that every time you learn something new, you have to build a fully functioning web app or an app that’s ready to submit to the App Store though. Once I realized that I could practice specific skills by building prototypes or by practicing in a small app then my learning became more focused.&lt;/p&gt;
 
-<p><strong>5. Slow is smooth and smooth is fast</strong></p>
+&lt;p&gt;&lt;strong&gt;4. Imposter Syndrome is normal&lt;/strong&gt;&lt;/p&gt;
 
-<p>I can sometimes feel pressure to complete a piece of work more quickly, either because the business is keen to implement something, we are nearing the end of a sprint, or I’m just put pressure on myself to complete a task.</p>
+&lt;p&gt;As someone who doesn’t have a computer science degree, and also a career changer I am prone to Imposter Syndrome. The problem is that it makes me retreat and blame myself for not being able to understand something. That’s not very productive!&lt;/p&gt;
 
-<p>I am learning that however tempting it is to do something quickly, it’s often best in the long road to take my time (within reason!) I am more likely to write cleaner, more flexible code and write good tests if I take a step back and don’t rush unnecessarily.</p>
+&lt;p&gt;I am trying to fill in gaps in my computer science knowledge by reading &lt;a href=&quot;https://bigmachine.io/products/the-imposters-handbook&quot;&gt;The Imposter’s Handbook&lt;/a&gt; and ensuring I always ask questions no matter how stupid they seem! Also, building a supportive network to discuss it with helps. I’ve realised that loads of other developers feel the same, no matter what their background or journey into tech.&lt;/p&gt;
 
-<p>Also, there are times when I’m struggling with solving something and I need to make myself get up and take a break. A 10 minute coffee break, a walk or just doing something else for a bit will mean I look at the problem afresh and solve it more quickly than if I put my head down and battle with it for hours on end. I am getting better at knowing when to keep battling, when to take a break and when to ask for help.</p>
+&lt;p&gt;&lt;strong&gt;5. Slow is smooth and smooth is fast&lt;/strong&gt;&lt;/p&gt;
 
-<p><strong>6. Understanding an entire codebase takes all developers time</strong></p>
+&lt;p&gt;I can sometimes feel pressure to complete a piece of work more quickly, either because the business is keen to implement something, we are nearing the end of a sprint, or I’m just put pressure on myself to complete a task.&lt;/p&gt;
 
-<p>When I first started as a developer, it was a bit overwhelming to be faced with a large existing codebase. All the other developers seem to know it inside out and I didn’t know where to start. I now realise that it takes all developers, even senior ones, time to understand existing code.</p>
+&lt;p&gt;I am learning that however tempting it is to do something quickly, it’s often best in the long road to take my time (within reason!) I am more likely to write cleaner, more flexible code and write good tests if I take a step back and don’t rush unnecessarily.&lt;/p&gt;
 
-<p>Taking time to understand the basic architecture and selecting an area of the code to get to know in more detail helps. But it’s only by using it, changing it and working with it that you can really understand it. It can take weeks or months to feel comfortable with a new codebase.</p>
+&lt;p&gt;Also, there are times when I’m struggling with solving something and I need to make myself get up and take a break. A 10 minute coffee break, a walk or just doing something else for a bit will mean I look at the problem afresh and solve it more quickly than if I put my head down and battle with it for hours on end. I am getting better at knowing when to keep battling, when to take a break and when to ask for help.&lt;/p&gt;
 
-<p><strong>7. Context switching impacts speed and quality of development</strong></p>
+&lt;p&gt;&lt;strong&gt;6. Understanding an entire codebase takes all developers time&lt;/strong&gt;&lt;/p&gt;
 
-<p>In my previous role I was used to juggling multiple projects at once, going to lots of meetings and generally multi-tasking all the time. As a developer, this kind of context switching is unmanageable.</p>
+&lt;p&gt;When I first started as a developer, it was a bit overwhelming to be faced with a large existing codebase. All the other developers seem to know it inside out and I didn’t know where to start. I now realise that it takes all developers, even senior ones, time to understand existing code.&lt;/p&gt;
 
-<p><a href="https://www.joelonsoftware.com/2001/02/12/human-task-switches-considered-harmful/">Joel Spolsky</a> explains this really well,</p>
+&lt;p&gt;Taking time to understand the basic architecture and selecting an area of the code to get to know in more detail helps. But it’s only by using it, changing it and working with it that you can really understand it. It can take weeks or months to feel comfortable with a new codebase.&lt;/p&gt;
 
-<p><strong>“…programming is the kind of task where you have to keep a lot of things in your head at once. The more things you remember at once, the more productive you are at programming. A programmer coding at full throttle is keeping zillions of things in their head at once: everything from names of variables, data structures, important APIs, the names of utility functions that they wrote and call a lot, even the name of the subdirectory where they store their source code…”</strong></p>
+&lt;p&gt;&lt;strong&gt;7. Context switching impacts speed and quality of development&lt;/strong&gt;&lt;/p&gt;
 
-<p>Working in a team means there will always be distractions but as a developer it is good to be aware of it. Don’t pick up two pieces of work at once for example or try not to be constantly interrupted by email or Slack. There’s a good reason why developers often wear headphones, it’s probably more to do with eliminating distractions than being unsociable!</p>
+&lt;p&gt;In my previous role I was used to juggling multiple projects at once, going to lots of meetings and generally multi-tasking all the time. As a developer, this kind of context switching is unmanageable.&lt;/p&gt;
 
-<p> </p>
+&lt;p&gt;&lt;a href=&quot;https://www.joelonsoftware.com/2001/02/12/human-task-switches-considered-harmful/&quot;&gt;Joel Spolsky&lt;/a&gt; explains this really well,&lt;/p&gt;
 
-<p>Thank you for reading! :)</p>]]></content><author><name></name></author><category term="general" /><category term="software-developer" /><summary type="html"><![CDATA[It’s been 2 years since I started to learn to code and just over a year since I became a developer, so it seems like a good time to reflect on what I’ve learned…]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/2012/01/junior.jpg" /><media:content medium="image" url="http://localhost:4000/images/2012/01/junior.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Happy New Year!</title><link href="http://localhost:4000/goals/2017/12/31/happy-new-year.html" rel="alternate" type="text/html" title="Happy New Year!" /><published>2017-12-31T00:00:00+00:00</published><updated>2017-12-31T00:00:00+00:00</updated><id>http://localhost:4000/goals/2017/12/31/happy-new-year</id><content type="html" xml:base="http://localhost:4000/goals/2017/12/31/happy-new-year.html"><![CDATA[<p>As the New Year approaches, I thought it would be useful to reflect on what I have achieved over the last 12 months as well as what’s on my to-do list for the next 12!</p>
+&lt;p&gt;&lt;strong&gt;“…programming is the kind of task where you have to keep a lot of things in your head at once. The more things you remember at once, the more productive you are at programming. A programmer coding at full throttle is keeping zillions of things in their head at once: everything from names of variables, data structures, important APIs, the names of utility functions that they wrote and call a lot, even the name of the subdirectory where they store their source code…”&lt;/strong&gt;&lt;/p&gt;
 
-<p> </p>
+&lt;p&gt;Working in a team means there will always be distractions but as a developer it is good to be aware of it. Don’t pick up two pieces of work at once for example or try not to be constantly interrupted by email or Slack. There’s a good reason why developers often wear headphones, it’s probably more to do with eliminating distractions than being unsociable!&lt;/p&gt;
 
-<p><strong>2017 Achievements:</strong></p>
+&lt;p&gt; &lt;/p&gt;
 
-<p>👩🏼‍🎓 “Graduated” from Sky’s Software Engineering Academy</p>
+&lt;p&gt;Thank you for reading! :)&lt;/p&gt;</content><author><name></name></author><category term="general" /><category term="software-developer" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/2018/01/junior.jpg" /><media:content medium="image" url="http://localhost:4000/images/2018/01/junior.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Happy New Year!</title><link href="http://localhost:4000/goals/2017/12/31/happy-new-year.html" rel="alternate" type="text/html" title="Happy New Year!" /><published>2017-12-31T00:00:00+00:00</published><updated>2017-12-31T00:00:00+00:00</updated><id>http://localhost:4000/goals/2017/12/31/happy-new-year</id><content type="html" xml:base="http://localhost:4000/goals/2017/12/31/happy-new-year.html">&lt;p&gt;&lt;img src=&quot;/images/2017/12/happy-new-year.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-<p>📱 Joined Sky News Mobile Team as an iOS developer and started coding in Swift full-time</p>
+&lt;p&gt;As the New Year approaches, I thought it would be useful to reflect on what I have achieved over the last 12 months as well as what’s on my to-do list for the next 12!&lt;/p&gt;
 
-<p>✅ Completed Stanford University Machine Learning Course</p>
+&lt;p&gt; &lt;/p&gt;
 
-<p>🗣 First public talk (and a few more!)</p>
+&lt;p&gt;&lt;strong&gt;2017 Achievements:&lt;/strong&gt;&lt;/p&gt;
 
-<p>🏆 Nominated for a Northern Power Women Award</p>
+&lt;p&gt;👩🏼‍🎓 “Graduated” from Sky’s Software Engineering Academy&lt;/p&gt;
 
-<p>📝 Started a blog</p>
+&lt;p&gt;📱 Joined Sky News Mobile Team as an iOS developer and started coding in Swift full-time&lt;/p&gt;
 
-<p> </p>
+&lt;p&gt;✅ Completed Stanford University Machine Learning Course&lt;/p&gt;
 
-<p><strong>Goals for 2018:</strong></p>
+&lt;p&gt;🗣 First public talk (and a few more!)&lt;/p&gt;
 
-<p>💡 Complete Arduino Starter Kit Projects</p>
+&lt;p&gt;🏆 Nominated for a Northern Power Women Award&lt;/p&gt;
 
-<p>🗣 Do a tech talk</p>
+&lt;p&gt;📝 Started a blog&lt;/p&gt;
 
-<p>🐍 Learn some Python</p>
+&lt;p&gt; &lt;/p&gt;
 
-<p>📱 Read Functional Swift Book</p>
+&lt;p&gt;&lt;strong&gt;Goals for 2018:&lt;/strong&gt;&lt;/p&gt;
 
-<p>📚 Read The Imposter’s Handbook</p>
+&lt;p&gt;💡 Complete Arduino Starter Kit Projects&lt;/p&gt;
 
-<p>💻 Contribute to Open Source</p>
+&lt;p&gt;🗣 Do a tech talk&lt;/p&gt;
 
-<p>📝 Publish more blog posts</p>
+&lt;p&gt;🐍 Learn some Python&lt;/p&gt;
 
-<p> </p>
+&lt;p&gt;📱 Read Functional Swift Book&lt;/p&gt;
 
-<p>What do you have on your to do list for 2018?</p>]]></content><author><name></name></author><category term="goals" /><summary type="html"><![CDATA[As the New Year approaches, I thought it would be useful to reflect on what I have achieved over the last 12 months as well as what’s on my to-do list for the next 12!]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/2017/12/happy-new-year.jpeg%22" /><media:content medium="image" url="http://localhost:4000/images/2017/12/happy-new-year.jpeg%22" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Dynamically adding css to WebViews in Swift</title><link href="http://localhost:4000/2017/11/25/dynamically-add-css-to-webviews-in-swift.html" rel="alternate" type="text/html" title="Dynamically adding css to WebViews in Swift" /><published>2017-11-25T00:00:00+00:00</published><updated>2017-11-25T00:00:00+00:00</updated><id>http://localhost:4000/2017/11/25/dynamically-add-css-to-webviews-in-swift</id><content type="html" xml:base="http://localhost:4000/2017/11/25/dynamically-add-css-to-webviews-in-swift.html"><![CDATA[<p>This week, I needed to figure out how to dynamically add css to a webView in iOS and it was much easier than I thought it would be.</p>
+&lt;p&gt;📚 Read The Imposter’s Handbook&lt;/p&gt;
 
-<p>All you need to do is make use of the webViewdidFinish function in the WKNavigationDelegate and evaluateJavaScript</p>
+&lt;p&gt;💻 Contribute to Open Source&lt;/p&gt;
 
-<noscript><pre>400: Invalid request</pre></noscript>
-<script src="https://gist.github.com/c3163d98822b6bc4c3edb16943c684c1.js"> </script>
+&lt;p&gt;📝 Publish more blog posts&lt;/p&gt;
 
-<p>This code will change the background colour of the webpage you are displaying to red.</p>
+&lt;p&gt; &lt;/p&gt;
 
-<p>To show how this works, I created a simple sample app with a series of buttons with colour choices on:</p>
+&lt;p&gt;What do you have on your to do list for 2018?&lt;/p&gt;</content><author><name></name></author><category term="goals" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/2017/12/happy-new-year.jpeg" /><media:content medium="image" url="http://localhost:4000/images/2017/12/happy-new-year.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Dynamically adding css to WebViews in Swift</title><link href="http://localhost:4000/2017/11/25/dynamically-add-css-to-webviews-in-swift.html" rel="alternate" type="text/html" title="Dynamically adding css to WebViews in Swift" /><published>2017-11-25T00:00:00+00:00</published><updated>2017-11-25T00:00:00+00:00</updated><id>http://localhost:4000/2017/11/25/dynamically-add-css-to-webviews-in-swift</id><content type="html" xml:base="http://localhost:4000/2017/11/25/dynamically-add-css-to-webviews-in-swift.html">&lt;p&gt;&lt;img src=&quot;/images/2017/11/colouring-pencils.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-<p><img src="/images/2017/11/view.png" alt="" /></p>
+&lt;p&gt;This week, I needed to figure out how to dynamically add css to a webView in iOS and it was much easier than I thought it would be.&lt;/p&gt;
 
-<p>Clicking on any of the buttons takes you to a webView which displays www.google.co.uk but the background colour of the webpage changes depending on the button chosen. So if you click on green you’re taken to this page:</p>
+&lt;p&gt;All you need to do is make use of the webViewdidFinish function in the WKNavigationDelegate and evaluateJavaScript&lt;/p&gt;
 
-<p><img src="/images/2017/11/webView-.png" alt="" /></p>
+&lt;script src=&quot;https://gist.github.com/c3163d98822b6bc4c3edb16943c684c1.js&quot;&gt; &lt;/script&gt;
 
-<p>To do this, in the ViewController I added an IBAction which performs the segue when a button is tapped. The button text is then passed through to the WebViewController:</p>
+&lt;p&gt;This code will change the background colour of the webpage you are displaying to red.&lt;/p&gt;
 
-<noscript><pre>400: Invalid request</pre></noscript>
-<script src="https://gist.github.com/83db251c9b6a7dc5423bdb854615932d.js"> </script>
+&lt;p&gt;To show how this works, I created a simple sample app with a series of buttons with colour choices on:&lt;/p&gt;
 
-<p>In the WebViewController there is a function getHexColour which determines the hex code colour based on the colour set in the segue.</p>
+&lt;p&gt;&lt;img src=&quot;/images/2017/11/view.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-<p>Then in webViewDidFinish I created the css and JavaScript and applied that to the webView using the evaluateJavascript function:</p>
+&lt;p&gt;Clicking on any of the buttons takes you to a webView which displays www.google.co.uk but the background colour of the webpage changes depending on the button chosen. So if you click on green you’re taken to this page:&lt;/p&gt;
 
-<noscript><pre>400: Invalid request</pre></noscript>
-<script src="https://gist.github.com/3b8f9216664dc6b51f67229dc0266e7c.js"> </script>
+&lt;p&gt;&lt;img src=&quot;/images/2017/11/webView-.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-<p>Here’s a link to the sample project code: <a href="https://github.com/Ceri-anne/WebViewCss">https://github.com/Ceri-anne/WebViewCss</a></p>]]></content><author><name></name></author><summary type="html"><![CDATA[This week, I needed to figure out how to dynamically add css to a webView in iOS and it was much easier than I thought it would be.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/2017/11/colouring-pencils.jpg%22" /><media:content medium="image" url="http://localhost:4000/images/2017/11/colouring-pencils.jpg%22" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">24 hours with the iPhone X</title><link href="http://localhost:4000/iphone/2017/11/04/24-hours-with-the-iphone-x.html" rel="alternate" type="text/html" title="24 hours with the iPhone X" /><published>2017-11-04T00:00:00+00:00</published><updated>2017-11-04T00:00:00+00:00</updated><id>http://localhost:4000/iphone/2017/11/04/24-hours-with-the-iphone-x</id><content type="html" xml:base="http://localhost:4000/iphone/2017/11/04/24-hours-with-the-iphone-x.html"><![CDATA[<p>As I’ve had my iPhone X for 24 hours now, I thought I’d jot down a few of my thoughts and observations:</p>
+&lt;p&gt;To do this, in the ViewController I added an IBAction which performs the segue when a button is tapped. The button text is then passed through to the WebViewController:&lt;/p&gt;
 
-<ul>
-  <li>It is beautiful. I know it’s ridiculously expensive, it’s only a phone, and it really doesn’t do anything more than my previous phone, but it is <em>beautiful</em> and I love it already</li>
-  <li>The Home Bar / lack of a Home Button is surprisingly easy to get used to. It feels completely natural to swipe on the screen rather than press a button. So far so good!</li>
-  <li>Face ID was really easy to set up and works really well. It did seem to struggle the first time I used it when I woke up this morning - the angle and my bleary eyes may have stumped it! I’m intrigued at how well it’s going to manage when I’m at work and my phone is lying on my desk…to be continued</li>
-  <li>Notifications being private on the lock screen but then “magically” expanding with the detail when my phone knows it’s me looking at it is really cool.</li>
-  <li>The notch isn’t too annoying so far. In fact, haven’t really noticed it. This might be because I’ve spent the last couple of months working with the iPhone X simulator in Xcode so I’m already used to it though. I’d be interested to hear how everyone else is finding it.</li>
-  <li>I am however a little distracted by the way different apps use the screen behind the Home Bar. It still looks a bit experimental and as a developer I can understand why. There are also quite a few apps yet to update so they are letterboxed but this is less annoying than the apps that didn’t update for the first Plus screens.</li>
-  <li>Not having the battery percentage displayed is a tad irritating. It’s only one swipe to reveal the control center to see the percentage but it irks me a little</li>
-  <li>It’s taking me some time to get used to swiping from the top of the screen for the control center rather than from the bottom. I use it a lot so I will have to retrain my brain</li>
-  <li>I love the size of the phone. I had the 7 Plus before this and the 6 Plus before that because I loved the bigger screen. Having quite small hands though I often struggled to use my phone one handed. With the iPhone X, I get a beautiful big screen with an easier to handle handset.</li>
-  <li>The Auto Set up in iOS11 was really smooth - a big improvement</li>
-  <li>A tiny thing but I love the fact that the ping phone logo on my Apple Watch has updated to be an iPhone X. Cute attention to detail Apple!<img src="/images/2017/11/iphone-x-watch.png" alt="" /></li>
-  <li>I do keep picking my phone up upside down as when it’s in standby it’s not easy to tell at a glance which was is the right way up! I have the Space Grey version, maybe the silver one doesn’t have that issue</li>
-  <li>I need to get a wireless charging pad so I can try that out..</li>
-</ul>
+&lt;script src=&quot;https://gist.github.com/83db251c9b6a7dc5423bdb854615932d.js&quot;&gt; &lt;/script&gt;
 
-<p>I’d be interested to hear how everyone else is finding it so far</p>]]></content><author><name></name></author><category term="iphone" /><category term="ios" /><category term="iphone-x" /><summary type="html"><![CDATA[As I’ve had my iPhone X for 24 hours now, I thought I’d jot down a few of my thoughts and observations:]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/2017/11/iphone-x.jpg" /><media:content medium="image" url="http://localhost:4000/images/2017/11/iphone-x.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Hello world!</title><link href="http://localhost:4000/2017/10/28/hello-world.html" rel="alternate" type="text/html" title="Hello world!" /><published>2017-10-28T00:00:00+01:00</published><updated>2017-10-28T00:00:00+01:00</updated><id>http://localhost:4000/2017/10/28/hello-world</id><content type="html" xml:base="http://localhost:4000/2017/10/28/hello-world.html"><![CDATA[<p>This is my first attempt at blogging but I aim to add musings about software development, learning to code and being a woman in tech</p>]]></content><author><name></name></author><category term="learn-to-code" /><category term="software-developer" /><category term="women-in-tech" /><summary type="html"><![CDATA[This is my first attempt at blogging but I aim to add musings about software development, learning to code and being a woman in tech]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/2017/10/note-pad.jpg" /><media:content medium="image" url="http://localhost:4000/images/2017/10/note-pad.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+&lt;p&gt;In the WebViewController there is a function getHexColour which determines the hex code colour based on the colour set in the segue.&lt;/p&gt;
+
+&lt;p&gt;Then in webViewDidFinish I created the css and JavaScript and applied that to the webView using the evaluateJavascript function:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/3b8f9216664dc6b51f67229dc0266e7c.js&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;Here’s a link to the sample project code: &lt;a href=&quot;https://github.com/Ceri-anne/WebViewCss&quot;&gt;https://github.com/Ceri-anne/WebViewCss&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/2017/11/colouring-pencils.jpg" /><media:content medium="image" url="http://localhost:4000/images/2017/11/colouring-pencils.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">24 hours with the iPhone X</title><link href="http://localhost:4000/iphone/2017/11/04/24-hours-with-the-iphone-x.html" rel="alternate" type="text/html" title="24 hours with the iPhone X" /><published>2017-11-04T00:00:00+00:00</published><updated>2017-11-04T00:00:00+00:00</updated><id>http://localhost:4000/iphone/2017/11/04/24-hours-with-the-iphone-x</id><content type="html" xml:base="http://localhost:4000/iphone/2017/11/04/24-hours-with-the-iphone-x.html">&lt;p&gt;&lt;img src=&quot;/images/2017/11/iphone-x.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As I’ve had my iPhone X for 24 hours now, I thought I’d jot down a few of my thoughts and observations:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;It is beautiful. I know it’s ridiculously expensive, it’s only a phone, and it really doesn’t do anything more than my previous phone, but it is &lt;em&gt;beautiful&lt;/em&gt; and I love it already&lt;/li&gt;
+  &lt;li&gt;The Home Bar / lack of a Home Button is surprisingly easy to get used to. It feels completely natural to swipe on the screen rather than press a button. So far so good!&lt;/li&gt;
+  &lt;li&gt;Face ID was really easy to set up and works really well. It did seem to struggle the first time I used it when I woke up this morning - the angle and my bleary eyes may have stumped it! I’m intrigued at how well it’s going to manage when I’m at work and my phone is lying on my desk…to be continued&lt;/li&gt;
+  &lt;li&gt;Notifications being private on the lock screen but then “magically” expanding with the detail when my phone knows it’s me looking at it is really cool.&lt;/li&gt;
+  &lt;li&gt;The notch isn’t too annoying so far. In fact, haven’t really noticed it. This might be because I’ve spent the last couple of months working with the iPhone X simulator in Xcode so I’m already used to it though. I’d be interested to hear how everyone else is finding it.&lt;/li&gt;
+  &lt;li&gt;I am however a little distracted by the way different apps use the screen behind the Home Bar. It still looks a bit experimental and as a developer I can understand why. There are also quite a few apps yet to update so they are letterboxed but this is less annoying than the apps that didn’t update for the first Plus screens.&lt;/li&gt;
+  &lt;li&gt;Not having the battery percentage displayed is a tad irritating. It’s only one swipe to reveal the control center to see the percentage but it irks me a little&lt;/li&gt;
+  &lt;li&gt;It’s taking me some time to get used to swiping from the top of the screen for the control center rather than from the bottom. I use it a lot so I will have to retrain my brain&lt;/li&gt;
+  &lt;li&gt;I love the size of the phone. I had the 7 Plus before this and the 6 Plus before that because I loved the bigger screen. Having quite small hands though I often struggled to use my phone one handed. With the iPhone X, I get a beautiful big screen with an easier to handle handset.&lt;/li&gt;
+  &lt;li&gt;The Auto Set up in iOS11 was really smooth - a big improvement&lt;/li&gt;
+  &lt;li&gt;A tiny thing but I love the fact that the ping phone logo on my Apple Watch has updated to be an iPhone X. Cute attention to detail Apple!&lt;img src=&quot;/images/2017/11/iphone-x-watch.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;I do keep picking my phone up upside down as when it’s in standby it’s not easy to tell at a glance which was is the right way up! I have the Space Grey version, maybe the silver one doesn’t have that issue&lt;/li&gt;
+  &lt;li&gt;I need to get a wireless charging pad so I can try that out..&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I’d be interested to hear how everyone else is finding it so far&lt;/p&gt;</content><author><name></name></author><category term="iphone" /><category term="ios" /><category term="iphone-x" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/2017/11/iphone-x.jpg" /><media:content medium="image" url="http://localhost:4000/images/2017/11/iphone-x.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Hello world!</title><link href="http://localhost:4000/2017/10/28/hello-world.html" rel="alternate" type="text/html" title="Hello world!" /><published>2017-10-28T00:00:00+01:00</published><updated>2017-10-28T00:00:00+01:00</updated><id>http://localhost:4000/2017/10/28/hello-world</id><content type="html" xml:base="http://localhost:4000/2017/10/28/hello-world.html">&lt;p&gt;&lt;img src=&quot;/images/2017/10/note-pad.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is my first attempt at blogging but I aim to add musings about software development, learning to code and being a woman in tech&lt;/p&gt;</content><author><name></name></author><category term="learn-to-code" /><category term="software-developer" /><category term="women-in-tech" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/2017/10/note-pad.jpg" /><media:content medium="image" url="http://localhost:4000/images/2017/10/note-pad.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
